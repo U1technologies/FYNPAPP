@@ -37,10 +37,36 @@ const CreditCardsScreen = ({navigation}) => {
       ],
       annualFee: '₹10,000 + GST',
       feeCondition: null,
+      // Details page data
+      joiningFee: {original: '₹10,000', discounted: '₹5,000'},
+      annualFeeDetails: {original: '₹10,000', discounted: '₹10,000'},
+      isLifetimeFree: false,
+      benefits: [
+        {
+          icon: '⭐',
+          title: '5X Rewards on Travel',
+          description: 'Earn 5X Edge Reward Points on travel bookings via Axis Travel Edge.',
+        },
+        {
+          icon: '✈',
+          title: 'Unlimited Lounge Access',
+          description: 'Complimentary domestic and international lounge access for you and guests.',
+        },
+        {
+          icon: '💱',
+          title: 'No Forex Markup',
+          description: 'Zero markup on foreign currency transactions across all international spends.',
+        },
+        {
+          icon: '🎯',
+          title: 'Metal Form Factor',
+          description: 'Premium metal card with exclusive benefits and priority customer service.',
+        },
+      ],
     },
     {
       id: 2,
-      name: 'Millennia Card',
+      name: 'FYNP Millennia',
       bank: 'HDFC Bank',
       tag: 'Cashback',
       tagColor: 'rgba(34, 197, 94, 0.15)',
@@ -54,6 +80,32 @@ const CreditCardsScreen = ({navigation}) => {
       ],
       annualFee: 'Free',
       feeCondition: '(Cond.)',
+      // Details page data
+      joiningFee: {original: '₹999', discounted: '₹0'},
+      annualFeeDetails: {original: '₹999', discounted: '₹0'},
+      isLifetimeFree: true,
+      benefits: [
+        {
+          icon: '%',
+          title: '5% Cashback',
+          description: 'On Amazon, Flipkart, Myntra & more. No capping on rewards.',
+        },
+        {
+          icon: '✈',
+          title: 'Airport Lounge Access',
+          description: '8 complimentary domestic lounge visits per year across India.',
+        },
+        {
+          icon: '⛽',
+          title: 'Fuel Surcharge Waiver',
+          description: '1% waiver on fuel transactions across all stations in India.',
+        },
+        {
+          icon: '🛡',
+          title: 'Zero Liability',
+          description: 'You are not liable for any fraudulent transactions on lost card.',
+        },
+      ],
     },
     {
       id: 3,
@@ -69,6 +121,32 @@ const CreditCardsScreen = ({navigation}) => {
       ],
       annualFee: '₹499 + GST',
       feeCondition: null,
+      // Details page data
+      joiningFee: {original: '₹499', discounted: '₹0'},
+      annualFeeDetails: {original: '₹999', discounted: '₹499'},
+      isLifetimeFree: false,
+      benefits: [
+        {
+          icon: '🎯',
+          title: '10X Reward Points',
+          description: 'Earn 10X reward points on online spends across all merchants.',
+        },
+        {
+          icon: '🎬',
+          title: 'BookMyShow Offers',
+          description: 'Exclusive discounts and cashback on BookMyShow movie ticket bookings.',
+        },
+        {
+          icon: '⛽',
+          title: 'Fuel Surcharge Waiver',
+          description: '1% fuel surcharge waiver on transactions between ₹500 to ₹3,000.',
+        },
+        {
+          icon: '🎁',
+          title: 'Welcome Benefits',
+          description: 'Get Amazon vouchers worth ₹500 on card activation and first transaction.',
+        },
+      ],
     },
   ];
 
@@ -76,7 +154,8 @@ const CreditCardsScreen = ({navigation}) => {
     <TouchableOpacity
       key={card.id}
       style={styles.ccItem}
-      activeOpacity={0.9}>
+      activeOpacity={0.9}
+      onPress={() => navigation.navigate('CreditCardDetails', {card})}>
       {/* Card Image Preview */}
       <View style={styles.ccPreview}>
         <Image
