@@ -125,7 +125,10 @@ const DashboardScreen = ({navigation}) => {
           </TouchableOpacity>
 
           {/* Personal Loans */}
-          <TouchableOpacity style={styles.productCard} activeOpacity={0.9}>
+          <TouchableOpacity
+            style={styles.productCard}
+            activeOpacity={0.9}
+            onPress={() => navigation.navigate('SelectLender')}>
             <View style={[styles.tag, styles.tagHot]}>
               <Text style={styles.tagText}>FAST</Text>
             </View>

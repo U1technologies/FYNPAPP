@@ -16,6 +16,9 @@ import AadhaarInputScreen from '../screens/CreditCards/AadhaarInputScreen';
 import AadhaarOTPScreen from '../screens/CreditCards/AadhaarOTPScreen';
 import KYCSuccessScreen from '../screens/CreditCards/KYCSuccessScreen';
 import CardTrackingScreen from '../screens/CreditCards/CardTrackingScreen';
+import SelectLenderScreen from '../screens/PersonalLoans/SelectLenderScreen';
+import LoanDetailsScreen from '../screens/PersonalLoans/LoanDetailsScreen';
+import KYCVerificationScreen from '../screens/PersonalLoans/KYCVerificationScreen';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +36,9 @@ const HomeStackNavigator = () => {
       <Stack.Screen name="AadhaarOTP" component={AadhaarOTPScreen} />
       <Stack.Screen name="KYCSuccess" component={KYCSuccessScreen} />
       <Stack.Screen name="CardTracking" component={CardTrackingScreen} />
+      <Stack.Screen name="SelectLender" component={SelectLenderScreen} />
+      <Stack.Screen name="LoanDetails" component={LoanDetailsScreen} />
+      <Stack.Screen name="KYCVerification" component={KYCVerificationScreen} />
     </Stack.Navigator>
   );
 };
