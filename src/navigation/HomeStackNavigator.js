@@ -7,6 +7,9 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import DashboardScreen from '../screens/Dashboard/DashboardScreen';
 import CreditCardsScreen from '../screens/CreditCards/CreditCardsScreen';
+import SelectLenderScreen from '../screens/PersonalLoans/SelectLenderScreen';
+import LoanDetailsScreen from '../screens/PersonalLoans/LoanDetailsScreen';
+import KYCVerificationScreen from '../screens/PersonalLoans/KYCVerificationScreen';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +18,9 @@ const HomeStackNavigator = () => {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Dashboard" component={DashboardScreen} />
       <Stack.Screen name="CreditCards" component={CreditCardsScreen} />
+      <Stack.Screen name="SelectLender" component={SelectLenderScreen} />
+      <Stack.Screen name="LoanDetails" component={LoanDetailsScreen} />
+      <Stack.Screen name="KYCVerification" component={KYCVerificationScreen} />
     </Stack.Navigator>
   );
 };
