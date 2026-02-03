@@ -3,7 +3,6 @@
  * Shows detailed information about a selected credit card
  */
 
-import React from 'react';
 import {
   View,
   Text,
@@ -25,7 +24,7 @@ const CreditCardDetailsScreen = ({route, navigation}) => {
     bank: 'HDFC Bank',
     image: 'https://app.banani.co/image-fallback.png',
     joiningFee: {original: '₹999', discounted: '₹0'},
-    annualFee: {original: '₹999', discounted: '₹0'},
+    annualFeeDetails: {original: '₹999', discounted: '₹0'},
     isLifetimeFree: true,
     benefits: [
       {
@@ -106,8 +105,8 @@ const CreditCardDetailsScreen = ({route, navigation}) => {
           <View style={styles.statBox}>
             <Text style={styles.statLabel}>Annual Fee</Text>
             <View style={styles.statValueContainer}>
-              <Text style={styles.strikeText}>{cardData.annualFee.original}</Text>
-              <Text style={styles.statValue}>{cardData.annualFee.discounted}</Text>
+              <Text style={styles.strikeText}>{cardData.annualFeeDetails.original}</Text>
+              <Text style={styles.statValue}>{cardData.annualFeeDetails.discounted}</Text>
             </View>
           </View>
         </View>
@@ -138,7 +137,9 @@ const CreditCardDetailsScreen = ({route, navigation}) => {
           <Text style={styles.footerLabel}>Limited period offer</Text>
           <Text style={styles.footerVal}>Lifetime Free</Text>
         </View>
-        <TouchableOpacity style={styles.applyBtn}>
+        <TouchableOpacity
+          style={styles.applyBtn}
+          onPress={() => navigation.navigate('CreditCardApplication', {card: cardData})}>
           <Text style={styles.applyBtnText}>Apply Now</Text>
           <Text style={styles.applyBtnIcon}>→</Text>
         </TouchableOpacity>

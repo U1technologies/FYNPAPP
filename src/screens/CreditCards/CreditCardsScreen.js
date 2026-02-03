@@ -214,7 +214,9 @@ const CreditCardsScreen = ({navigation}) => {
               )}
             </Text>
           </View>
-          <TouchableOpacity style={styles.applyBtn}>
+          <TouchableOpacity
+            style={styles.applyBtn}
+            onPress={() => navigation.navigate('CreditCardApplication', {card})}>
             <Text style={styles.applyBtnText}>Apply Now</Text>
           </TouchableOpacity>
         </View>
